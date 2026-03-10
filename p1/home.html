@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Event Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="logo-text">Welcome to GOTICK &nbsp;&nbsp;</h1>
+        <p>Your gateway to unforgettable musical nights!</p>
+    </header>
+    <nav class="nav">
+        <a href="#about">About Us</a>
+        <a href="#events">Upcoming Events</a>
+        <a href="gotick.html">Get Tickets</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+    <div>
+        <div id="about" class="container">
+            <h2 class="section-title">About Us</h2>
+            <p>Event Hub is your one-stop destination for the most thrilling and engaging live music experiences. From
+                Garba Nights to Singing Shows and International Concerts, we bring the best artists to a stage near you.
+                Join us for unforgettable musical journeys and create memories that last a lifetime.</p>
+            <p><strong>"Music connects hearts, events create memories!"</strong></p>
+        </div>
+        <div class="upcoming-events" id="events">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="event-list">
+                <div class="event-card">
+                    <h3>Navratri Garba Night</h3>
+                    <p><i class="fas fa-calendar"></i> October 18, 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ahmedabad, India</p>
+                    <p>Featuring Aditya Gadhvi and top folk singers!</p>
+                </div>
+                <div class="event-card">
+                    <h3>Singing Sensation Night</h3>
+                    <p><i class="fas fa-calendar"></i> November 5, 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                    <p>Live performances by Bollywood's best singers!</p>
+                </div>
+                <div class="event-card">
+                    <h3>International Music Tour</h3>
+                    <p><i class="fas fa-calendar"></i> December 12, 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> London, UK</p>
+                    <p>A world-class music experience with international artists.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+            <p>&copy; 2025 GOTICK | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="main.js">
+        $(document).ready(function () {
+            // Ask user if they want to log out
+            const userConfirmed = confirm("Do you want to log out?");
+            if (userConfirmed) {
+                localStorage.removeItem("isRegistered");
+                localStorage.removeItem("userData");
+            } else {
+                console.log("Logout canceled by user.");
+            }
+
+            // Check if the user is registered
+            if (localStorage.getItem("isRegistered") === "true") {
+                $(".nav").append('<a href="profile.html"><i class="fas fa-user"></i> Profile</a>');
+            } else {
+                alert("Please register to access your profile.");
+                window.location.href = "registration.html"; // Redirect to registration
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - GOTICK</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent);
+            animation: shine 3s infinite;
+        }
+
+        .navbar {
+            background: linear-gradient(to bottom, #d00000, #a00000);
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        @keyframes shine {
+            to {
+                left: 150%;
+            }
+        }
+
+        .logo-text {
+            display: inline-block;
+            position: relative;
+        }
+
+        .logo-text::after {
+            content: "🎵";
+            position: absolute;
+            top: -5px;
+            right: -30px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #b71c1c;
+            padding: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+        }
+
+        a i {
+            margin-right: 8px;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .form-box {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            width: 350px;
+        }
+
+        .form-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border: 2px solid #d00000;
+        }
+
+        .warning {
+            color: #ff4444;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background: #d00000;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #b00000;
+        }
+
+        .footer {
+            background: linear-gradient(to right, #1e1e1e, #2d2d2d);
+            padding: 20px;
+            text-align: center;
+            margin-top: 0px;
+            background-color: #1e1e1e;
+        }
+
+        .social-icons {
+            margin-bottom: 15px;
+        }
+
+        .social-icons i {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #ccc;
+            transition: all 0.3s;
+        }
+
+        .social-icons i:hover {
+            color: #f44336;
+            transform: scale(1.2);
+        }
+
+        /* Menu Button */
+        .menu-btn {
+            font-size: 24px;
+            cursor: pointer;
+            position: fixed;
+            left: 15px;
+            top: 15px;
+            background: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            display: none;
+            /* Hidden by default */
+            width: 100%;
+            background-color: #111;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">GOTICK - Checkout & Registration</div>
+        <div class="nav">
+            <a href="#" class="menu-bar"><i class="fas fa-bars"></i> Menu</a>
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <a href="checkout.html"><i class="fas fa-shopping-cart"></i> Checkout</a>
+            <a href="registration.html"><i class="fas fa-user-plus"></i> Register</a>
+        </div>
+        <div class="sidebar">
+            <a href="gotick.html">Singing Shows</a>
+            <a href="m1.html">Movies</a>
+            <a href="gn.html">Garba Nights</a>
+            <a href="m2.html">Trips (India)</a>
+            <a href="m3.html">Trips (Abroad)</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-box">
+            <h2>Register</h2>
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <div class="input-group">
+                    <input type="text" id="fullName" placeholder="Full Name" required />
+                    <input type="email" id="email" placeholder="Email" required />
+                    <input type="text" id="username" placeholder="Username" required />
+                    <input type="password" id="password" placeholder="Password" required />
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+                    <input type="text" id="phoneNumber" placeholder="Phone Number" required />
+                </div>
+                <div id="warning" class="warning" style="display: none">
+                    Enter a valid 10-digit phone number
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
+        <p>&copy; 2025 GOTICK | All Rights Reserved</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Redirect if already registered
+            if (localStorage.getItem("isRegistered") === "true") {
+                window.location.href = "profile.html";
+            }
+
+            // Toggle Sidebar Menu
+            $(".menu-bar").click(function () {
+                $(".sidebar").slideToggle("slow");
+            });
+
+            // Form Submission Handling
+            $("#registrationForm").submit(function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                if (validateForm()) {
+                    let userData = {
+                        fullName: $("#fullName").val().trim(),
+                        email: $("#email").val().trim(),
+                        username: $("#username").val().trim(),
+                        phoneNumber: $("#phoneNumber").val().trim(),
+                    };
+
+                    localStorage.setItem("isRegistered", "true"); // Mark as registered
+                    localStorage.setItem("userData", JSON.stringify(userData)); // Store user data
+
+                    alert("Registration successful! Redirecting to profile.");
+                    window.location.href = "profile.html"; // Redirect to profile page
+                }
+            });
+        });
+
+        // Validation Function
+        function validateForm() {
+            var fullName = $("#fullName").val().trim();
+            var email = $("#email").val().trim();
+            var username = $("#username").val().trim();
+            var password = $("#password").val();
+            var confirmPassword = $("#confirmPassword").val();
+            var phoneNumber = $("#phoneNumber").val().trim();
+            var warning = $("#warning");
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const usernamePattern = /^[a-zA-Z0-9_]{3,}$/;
+            const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            const phonePattern = /^[0-9]{10}$/;
+
+            $(".warning").remove(); // Remove existing warning messages
+            let isValid = true;
+
+            if (!fullName || !email || !username || !password || !confirmPassword || !phoneNumber) {
+                displayWarning("#registrationForm", "All fields are required.");
+                isValid = false;
+            }
+
+            if (!emailPattern.test(email)) {
+                displayWarning("#email", "Please enter a valid email address.");
+                isValid = false;
+            }
+
+            if (!usernamePattern.test(username)) {
+                displayWarning("#username", "Username must be at least 3 characters long and contain only letters, numbers, and underscores.");
+                isValid = false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                displayWarning("#password", "Password must be at least 8 characters long and include at least one letter, one number, and one special character.");
+                isValid = false;
+            }
+
+            if (password !== confirmPassword) {
+                displayWarning("#confirmPassword", "Passwords do not match.");
+                isValid = false;
+            }
+
+            if (!phonePattern.test(phoneNumber)) {
+                warning.show();
+                isValid = false;
+            } else {
+                warning.hide();
+            }
+
+            return isValid;
+        }
+
+        // Function to display inline warnings
+        function displayWarning(selector, message) {
+            $(selector).after(`<p class="warning" style="color: #ff4444; font-size: 14px;">${message}</p>`);
+        }
+    </script>
+
+</body>
+
+</html>
