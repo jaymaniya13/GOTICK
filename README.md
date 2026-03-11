@@ -1,24 +1,24 @@
-# 🎟️ GOTICK — Event Ticketing Platform
+#  GOTICK — Event Ticketing Platform
 
 GOTICK is a web-based event ticketing platform that allows users to browse, search, and book tickets for a variety of live events — including Singing Shows, Garba Nights, Movies, and Travel Trips (India & Abroad).
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🔍 **Real-time Search** — Instantly filter artists and events as you type
-- 🎭 **Category-based Navigation** — Browse events by category: Singing Shows, Movies, Garba Nights, Trips (India), Trips (Abroad)
-- 🎤 **Artist Profiles** — View featured artists with event details, songs, and achievements
-- 🎫 **Ticket Booking** — Double-click any artist card to open a booking panel with ticket quantity and price calculation
-- 🛒 **Checkout Flow** — Seamless checkout with order summary
-- 💾 **Session Persistence** — Booking details (artist, event, ticket count, total) saved via `localStorage`
-- 👤 **User Registration & Profile** — Register to access your profile and personalized experience
-- 📱 **Mobile-First Responsive Design** — Built with CSS Grid and Flexbox for all screen sizes
-- 🌙 **Dark Theme UI** — Sleek dark-themed interface with smooth animations
+-  **Real-time Search** — Instantly filter artists and events as you type
+-  **Category-based Navigation** — Browse events by category: Singing Shows, Movies, Garba Nights, Trips (India), Trips (Abroad)
+-  **Artist Profiles** — View featured artists with event details, songs, and achievements
+-  **Ticket Booking** — Double-click any artist card to open a booking panel with ticket quantity and price calculation
+-  **Checkout Flow** — Seamless checkout with order summary
+-  **Session Persistence** — Booking details (artist, event, ticket count, total) saved via `localStorage`
+-  **User Registration & Profile** — Register to access your profile and personalized experience
+-  **Mobile-First Responsive Design** — Built with CSS Grid and Flexbox for all screen sizes
+-  **Dark Theme UI** — Sleek dark-themed interface with smooth animations
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Technology | Usage |
 |---|---|
@@ -31,7 +31,7 @@ GOTICK is a web-based event ticketing platform that allows users to browse, sear
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 gotick/
@@ -51,7 +51,7 @@ gotick/
 
 ---
 
-## ⚙️ Getting Started
+##  Getting Started
 
 Since this is a pure front-end project with no build tools or dependencies, you can run it directly in your browser.
 
@@ -91,7 +91,7 @@ start home.html
 
 ---
 
-## 🎨 Pages Overview
+##  Pages Overview
 
 | Page | Description |
 |---|---|
@@ -107,7 +107,7 @@ start home.html
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! If you'd like to improve GOTICK:
 
@@ -119,13 +119,13 @@ Contributions are welcome! If you'd like to improve GOTICK:
 
 ---
 
-## 👥 Team
+##  Team
 
 Developed by a 4-member team as part of a web development project (Mar 2025 – Apr 2025).
 
 ---
 
-## 📄 License
+##  License
 
 This project is open source and available under the [MIT License](LICENSE).
 
